@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Muhammed Ismail — Endpoint, identity, and cloud engineer">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1a2b"/>
+      <stop offset="1" stop-color="#132a42"/>
+    </linearGradient>
+    <linearGradient id="wire" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3fb8e8" stop-opacity="0.25"/>
+      <stop offset="0.5" stop-color="#3fb8e8" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#3fb8e8" stop-opacity="0.25"/>
+    </linearGradient>
+    <radialGradient id="hubGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f2b544" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#f2b544" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#3fb8e8" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <style>
+      .t{font-family:"Segoe UI",Inter,Helvetica,Arial,sans-serif;fill:#e8f1f8}
+      .name{font-size:40px;font-weight:600;letter-spacing:-0.5px}
+      .sub{font-size:17px;fill:#9fc3da}
+      .lbl{font-size:12px;fill:#9fc3da}
+      .lbl-r{font-size:13px;fill:#cfe3f0}
+      .wire{fill:none;stroke:url(#wire);stroke-width:1.6}
+      .pulse{fill:#7fe0ff;filter:url(#glow)}
+      @media (prefers-reduced-motion: reduce){.pulse{display:none}}
+    </style>
+  </defs>
+
+  <rect width="1200" height="320" fill="url(#bg)"/>
+  <rect width="1200" height="320" fill="url(#grid)"/>
+
+  <!-- Wires: endpoints (left) -> identity hub (center) -->
+  <path id="w1" class="wire" d="M760 92 C 830 92, 850 160, 920 160"/>
+  <path id="w2" class="wire" d="M760 160 L 920 160"/>
+  <path id="w3" class="wire" d="M760 228 C 830 228, 850 160, 920 160"/>
+
+  <!-- Wires: identity hub -> cloud services (right) -->
+  <path id="w4" class="wire" d="M920 160 C 990 160, 1010 84, 1000 84"/>
+  <path id="w5" class="wire" d="M920 160 L 1000 160"/>
+  <path id="w6" class="wire" d="M920 160 C 990 160, 1010 236, 1000 236"/>
+
+  <!-- Signal pulses -->
+  <circle class="pulse" r="3.2"><animateMotion dur="3.2s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle>
+  <circle class="pulse" r="3.2"><animateMotion dur="2.6s" begin="0.8s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle>
+  <circle class="pulse" r="3.2"><animateMotion dur="3.4s" begin="1.5s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle>
+  <circle class="pulse" r="3.2"><animateMotion dur="3s" begin="1.1s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle>
+  <circle class="pulse" r="3.2"><animateMotion dur="2.4s" begin="0.3s" repeatCount="indefinite"><mpath href="#w5"/></animateMotion></circle>
+  <circle class="pulse" r="3.2"><animateMotion dur="3.6s" begin="2s" repeatCount="indefinite"><mpath href="#w6"/></animateMotion></circle>
+
+  <!-- Endpoints: Windows / macOS / Autopilot -->
+  <g stroke="#3fb8e8" stroke-width="1.5" fill="#0d1a2b">
+    <rect x="712" y="76" width="34" height="24" rx="3"/>
+    <rect x="706" y="102" width="46" height="3" rx="1" fill="#3fb8e8" stroke="none"/>
+    <rect x="712" y="144" width="34" height="24" rx="3"/>
+    <rect x="706" y="170" width="46" height="3" rx="1" fill="#3fb8e8" stroke="none"/>
+    <rect x="712" y="212" width="34" height="24" rx="3"/>
+    <rect x="706" y="238" width="46" height="3" rx="1" fill="#3fb8e8" stroke="none"/>
+  </g>
+  <g class="t lbl" text-anchor="end">
+    <text x="696" y="94">Windows</text>
+    <text x="696" y="162">macOS</text>
+    <text x="696" y="230">Autopilot</text>
+  </g>
+
+  <!-- Identity hub: Entra ID / Conditional Access -->
+  <circle cx="920" cy="160" r="34" fill="url(#hubGlow)"/>
+  <circle cx="920" cy="160" r="17" fill="#0d1a2b" stroke="#f2b544" stroke-width="2"/>
+  <circle cx="920" cy="160" r="6" fill="#f2b544"/>
+  <text class="t lbl" x="920" y="208" text-anchor="middle">Entra ID</text>
+  <text class="t lbl" x="920" y="224" text-anchor="middle">Conditional Access</text>
+
+  <!-- Cloud services -->
+  <g fill="#0d1a2b" stroke="#3fb8e8" stroke-width="1.5">
+    <rect x="1000" y="70" width="28" height="28" rx="6"/>
+    <rect x="1000" y="146" width="28" height="28" rx="6"/>
+    <rect x="1000" y="222" width="28" height="28" rx="6"/>
+  </g>
+  <g fill="#3fb8e8">
+    <circle cx="1014" cy="84" r="4"/>
+    <circle cx="1014" cy="160" r="4"/>
+    <circle cx="1014" cy="236" r="4"/>
+  </g>
+  <g class="t lbl-r">
+    <text x="1040" y="89">Intune</text>
+    <text x="1040" y="165">Virtual Desktop (AVD)</text>
+    <text x="1040" y="241">Azure</text>
+  </g>
+
+  <!-- Name and role -->
+  <text class="t name" x="72" y="150">Muhammed Ismail</text>
+  <text class="t sub" x="72" y="184">Endpoint, identity, and cloud infrastructure engineer</text>
+  <text class="t sub" x="72" y="210" fill="#6f95ad">Intune · Entra ID · Autopilot · Defender · Azure</text>
+</svg>
