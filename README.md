@@ -12,7 +12,8 @@ Built while working as an Endpoint/Modern Workplace Engineer, on a track toward 
 | `/intune/compliance-policies` | Device compliance policy configs and exports |
 | `/intune/app-deployment` | Win32 app packaging and deployment (incl. printer automation project) |
 | `/intune/conditional-access` | Conditional Access policy-as-documentation, MFA/device/location controls |
-| `/endpoint-central` | ManageEngine Endpoint Central: patch management, device management |
+| `/intune/macos-ade` | macOS Automated Device Enrollment: legacy Profiles → Enrollment Policies migration |
+| `/endpoint-central` | ManageEngine Endpoint Central: patch management, device management, macOS agent deployment |
 | `/azure/az-104-labs` | VNet/NSG/Storage/RBAC/VM hands-on labs |
 | `/azure/avd-labs` | Azure Virtual Desktop: host pools, FSLogix, session hosts |
 | `/aws` | EC2/S3 hands-on labs |
